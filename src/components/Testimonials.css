@@ -1,0 +1,125 @@
+.testimonials-section { background: var(--black); }
+
+.testimonials-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.t-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.t-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 0;
+}
+
+.t-dot.active { background: var(--accent); width: 24px; border-radius: 4px; }
+
+.t-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px;
+  animation: fadeUp 0.4s ease;
+}
+
+.t-stars {
+  color: var(--accent);
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.t-quote {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--white);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  border: none;
+}
+
+.t-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.t-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.t-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.t-role {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.t-car-badge {
+  margin-left: auto;
+  font-size: 0.72rem;
+  color: var(--muted);
+  background: rgba(255,255,255,0.04);
+  padding: 5px 12px;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+}
+
+.t-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  justify-content: flex-end;
+}
+
+.t-nav button {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--white);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.t-nav button:hover { border-color: var(--accent); color: var(--accent); }
+
+.t-nav span {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+}
+
+@media (max-width: 800px) {
+  .testimonials-inner { grid-template-columns: 1fr; gap: 40px; }
+}

@@ -1,0 +1,254 @@
+/* SECTION */
+.cars-section {
+  background: var(--black);
+}
+
+/* HEADER */
+.cars-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* CATEGORY TABS */
+.cat-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.cat-tab {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 8px 22px;
+  border-radius: 50px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.cat-tab:hover {
+  border-color: var(--accent);
+  color: var(--white);
+}
+
+.cat-tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--black);
+  font-weight: 600;
+}
+
+/* GRID */
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* CARD */
+.car-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.35s ease;
+}
+
+.car-card:hover {
+  border-color: rgba(200,168,75,0.4);
+  transform: translateY(-8px);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.5);
+}
+
+/* SHINE EFFECT */
+.car-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.08),
+    transparent
+  );
+  transition: 0.7s;
+}
+
+.car-card:hover::before {
+  left: 130%;
+}
+
+/* BADGE */
+.car-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  background: var(--accent);
+  color: var(--black);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+/* IMAGE */
+.car-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+
+/* IMAGE STYLE */
+.car-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* ZOOM EFFECT */
+.car-card:hover .car-img {
+  transform: scale(1.1);
+}
+
+/* DARK OVERLAY */
+.car-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.1),
+    transparent
+  );
+}
+
+/* INFO */
+.car-info {
+  padding: 20px;
+}
+
+/* META */
+.car-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.car-brand {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.car-category {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-dim);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* NAME */
+.car-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  color: var(--white);
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
+/* SPECS */
+.car-specs {
+  display: flex;
+  gap: 14px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+/* FOOTER */
+.car-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+/* PRICE */
+.car-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+}
+
+/* BUTTON */
+.car-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 7px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.car-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* EMPTY STATE */
+.no-cars {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--muted);
+}
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .cars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cars-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
